@@ -1,0 +1,305 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "version": 1,
+    "newProjectRoot": "projects",
+    "projects": {
+        "admin-ag": {
+            "projectType": "application",
+            "schematics": {
+                "@schematics/angular:component": {
+                    "style": "scss"
+                }
+            },
+            "root": "",
+            "sourceRoot": "src",
+            "prefix": "app",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist/admin",
+                        "index": "src/index.html",
+                        "main": "src/main.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "tsconfig.app.json",
+                        "allowedCommonJsDependencies": [
+                            "froala-editor/js/plugins/align.min.js",
+                            "froala-editor/js/plugins/char_counter.min.js",
+                            "froala-editor/js/plugins/code_beautifier.min.js",
+                            "froala-editor/js/plugins/code_view.min.js",
+                            "froala-editor/js/plugins/draggable.min.js",
+                            "froala-editor/js/plugins/emoticons.min.js",
+                            "froala-editor/js/plugins/file.min.js",
+                            "froala-editor/js/plugins/font_size.min.js",
+                            "froala-editor/js/plugins/fullscreen.min.js",
+                            "froala-editor/js/plugins/image.min.js",
+                            "froala-editor/js/plugins/image_manager.min.js",
+                            "froala-editor/js/third_party/image_tui.min.js",
+                            "froala-editor/js/plugins/inline_class.min.js",
+                            "froala-editor/js/plugins/line_breaker.min.js",
+                            "froala-editor/js/plugins/link.min.js",
+                            "froala-editor/js/plugins/lists.min.js",
+                            "froala-editor/js/plugins/paragraph_style.min.js",
+                            "froala-editor/js/plugins/paragraph_format.min.js",
+                            "froala-editor/js/plugins/print.min.js",
+                            "froala-editor/js/plugins/quick_insert.min.js",
+                            "froala-editor/js/plugins/entities.min.js",
+                            "froala-editor/js/plugins/quote.min.js",
+                            "froala-editor/js/plugins/table.min.js",
+                            "froala-editor/js/plugins/url.min.js",
+                            "froala-editor/js/plugins/video.min.js",
+                            "froala-editor/js/plugins/word_paste.min.js",
+                            "froala-editor/js/froala_editor.pkgd.min.js",
+                            "lodash"
+                        ],
+                        "aot": true,
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "styles": [
+                            "node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "src/styles.scss",
+                            "./node_modules/ngx-toastr/toastr.css",
+                            "./node_modules/dragula/dist/dragula.css",
+                            "./node_modules/froala-editor/css/froala_editor.pkgd.min.css",
+                            "./node_modules/froala-editor/css/froala_style.min.css",
+                            "./node_modules/intl-tel-input/build/css/intlTelInput.css",
+                            "./node_modules/summernote/dist/summernote-lite.min.css"
+                        ],
+                        "scripts": [
+                            "node_modules/jquery/dist/jquery.min.js",
+                            "node_modules/popper.js/dist/umd/popper.min.js",
+                            "node_modules/bootstrap/dist/js/bootstrap.min.js",
+                            "node_modules/froala-editor/js/froala_editor.pkgd.min.js",
+                            "node_modules/summernote/dist/summernote-lite.min.js"
+                        ]
+                    },
+                    "configurations": {
+                        "develop": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.develop.ts"
+                            }],
+                            "aot": true,
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "100kb",
+                                    "maximumError": "200kb"
+                                }
+                            ]
+                        },
+                        "staging": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.staging.ts"
+                            }],
+                            "aot": true,
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "100kb",
+                                    "maximumError": "200kb"
+                                }
+                            ]
+                        },
+                        "demo": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.demo.ts"
+                            }],
+                            "aot": true,
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "100kb",
+                                    "maximumError": "200kb"
+                                }
+                            ]
+                        },
+                        "elmaster": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.elmaster.ts"
+                            }],
+                            "aot": true,
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "100kb",
+                                    "maximumError": "200kb"
+                                }
+                            ]
+                        },
+                        "farm": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.farm.ts"
+                            }],
+                            "aot": true,
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "100kb",
+                                    "maximumError": "200kb"
+                                }
+                            ]
+                        },
+                        "production": {
+                            "fileReplacements": [{
+                                "replace": "src/environments/environment.ts",
+                                "with": "src/environments/environment.prod.ts"
+                            }],
+                            "optimization": true,
+                            "outputHashing": "all",
+                            "sourceMap": false,
+                            "extractCss": true,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
+                            "budgets": [{
+                                    "type": "initial",
+                                    "maximumWarning": "10mb",
+                                    "maximumError": "15mb"
+                                },
+                                {
+                                    "type": "anyComponentStyle",
+                                    "maximumWarning": "100kb",
+                                    "maximumError": "200kb"
+                                }
+                            ]
+                        }
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "admin-ag:build"
+                    },
+                    "configurations": {
+                        "production": {
+                            "browserTarget": "admin-ag:build:production"
+                        }
+                    }
+                },
+                "extract-i18n": {
+                    "builder": "@angular-devkit/build-angular:extract-i18n",
+                    "options": {
+                        "browserTarget": "admin-ag:build"
+                    }
+                },
+                "test": {
+                    "builder": "@angular-devkit/build-angular:karma",
+                    "options": {
+                        "main": "src/test.ts",
+                        "polyfills": "src/polyfills.ts",
+                        "tsConfig": "tsconfig.spec.json",
+                        "karmaConfig": "karma.conf.js",
+                        "assets": [
+                            "src/favicon.ico",
+                            "src/assets"
+                        ],
+                        "styles": [
+                            "./node_modules/bootstrap/dist/css/bootstrap.min.css",
+                            "./node_modules/ngx-bootstrap/datepicker/bs-datepicker.css",
+                            "src/styles.scss"
+                        ],
+                        "scripts": []
+                    }
+                },
+                "lint": {
+                    "builder": "@angular-devkit/build-angular:tslint",
+                    "options": {
+                        "tsConfig": [
+                            "tsconfig.app.json",
+                            "tsconfig.spec.json",
+                            "e2e/tsconfig.json"
+                        ],
+                        "exclude": [
+                            "**/node_modules/**"
+                        ]
+                    }
+                },
+                "e2e": {
+                    "builder": "@angular-devkit/build-angular:protractor",
+                    "options": {
+                        "protractorConfig": "e2e/protractor.conf.js",
+                        "devServerTarget": "admin-ag:serve"
+                    },
+                    "configurations": {
+                        "production": {
+                            "devServerTarget": "admin-ag:serve:production"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "admin-ag",
+    "cli": {
+        "defaultCollection": "@nativescript/schematics",
+        "analytics": "30f9f2de-5dda-470c-8851-e2742fda4279"
+    }
+}
